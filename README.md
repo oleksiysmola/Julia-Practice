@@ -4,4 +4,4 @@ This is just a repository containing things that I find useful in Julia. It is m
 ## References
 SN Yurchenko, W Thiel, P Jensen; (2007) Theoretical ROVibrational Energies (TROVE): A robust numerical approach to the calculation of rovibrational energies for polyatomic molecules - Journal of Molecular Spectroscopy, https://doi.org/10.1016/j.jms.2007.07.009
 
-Q Chen, P Houston, Q Yu, R Conte, P Pandey, A Nandi, et al; (2023) Communication J Chem Phys: Machine Learning Classification can Significantly Reduce the Cost of Calculating the Hamiltonian Matrix in CI Calculations 
+Q Chen, P Houston, Q Yu, R Conte, P Pandey, A Nandi, et al; (2023) Communication J Chem Phys: Machine Learning Classification can Significantly Reduce the Cost of Calculating the Hamiltonian Matrix in CI Calculations, https://doi.org/10.26434/chemrxiv-2023-8sc6z-v2
