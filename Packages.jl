@@ -1,7 +1,16 @@
 using Pkg
-Pkg.add("DataFrames")
-Pkg.add("CSV")
-Pkg.add("Plots")
-Pkg.add("LaTeXStrings")
-Pkg.add("ScikitLearn")
-
+# Pkg.add("DataFrames")
+# Pkg.add("CSV")
+# Pkg.add("Plots")
+# Pkg.add("LaTeXStrings")
+# Pkg.add("Random")
+# Pkg.add("GLM")
+# Pkg.add("StatsBase")
+# Pkg.add("MLBase")
+# Pkg.add("ROCAnalysis")
+# Pkg.add("ClassImbalance")
+# Pkg.add("ScikitLearn")
+# Pkg.add("Conda")
+# Pkg.add("PyCall")
+# Pkg.add("Lathe")
+# using Conda
