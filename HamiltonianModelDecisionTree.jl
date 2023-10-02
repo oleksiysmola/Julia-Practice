@@ -14,21 +14,31 @@ using ROCAnalysis
 hamiltonian = DataFrame(CSV.File("H2SHamiltonianWithQuantumNumbers.csv"))
 energyCutOff = 2
 insertcols!(hamiltonian, 10, :setToZero => abs.(hamiltonian.Energy) .< energyCutOff)
-
+select!(hamiltonian, Not([:bJ, :kJ]))
+# print(hamiltonian[1:5, 1:6])
 Random.seed!(123)
 
 
-testFraction = 0.2
+testFraction = 0.6
 
 isTesting = rand(size(hamiltonian, 1)) .< testFraction
 
+# trainingHamiltonian = hamiltonian[.!isTesting, :]
+# trainingQuantumNumbers = trainingHamiltonian[:, 1:8]
+# trainingSetToZero = trainingHamiltonian[:, 10]
+
+# testingHamiltonian = hamiltonian[isTesting, :]
+# testingQuantumNumbers = testingHamiltonian[:, 1:8]
+# testingSetToZero = testingHamiltonian[:, 10]
+
+# Without J
 trainingHamiltonian = hamiltonian[.!isTesting, :]
-trainingQuantumNumbers = trainingHamiltonian[:, 1:8]
-trainingSetToZero = trainingHamiltonian[:, 10]
+trainingQuantumNumbers = trainingHamiltonian[:, 1:6]
+trainingSetToZero = trainingHamiltonian[:, 8]
 
 testingHamiltonian = hamiltonian[isTesting, :]
-testingQuantumNumbers = testingHamiltonian[:, 1:8]
-testingSetToZero = testingHamiltonian[:, 10]
+testingQuantumNumbers = testingHamiltonian[:, 1:6]
+testingSetToZero = testingHamiltonian[:, 8]
 
 # print(size(testingHamiltonian[:, 1]))
 # print(size(trainingHamiltonian[:, 1]))
@@ -45,7 +55,8 @@ println()
 print("Number of elements that should be kept: ", numberOfElementsKept)
 println()
 
-model = DecisionTreeClassifier(max_depth=8)
+model = DecisionTreeClassifier(max_depth=10)
+# model = RandomForestClassifier(n_trees=20, max_depth=10)
 @time fit!(model, Matrix(trainingQuantumNumbers), Vector(trainingSetToZero))
 
 predictedSetToZero = predict(model, Matrix(testingQuantumNumbers))
