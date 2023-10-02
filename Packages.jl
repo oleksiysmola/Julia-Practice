@@ -8,6 +8,7 @@ using Pkg
 # Pkg.add("StatsBase")
 # Pkg.add("MLBase")
 # Pkg.add("ROCAnalysis")
+# Pkg.add("DecisionTree")
 # Pkg.add("ClassImbalance")
 # Pkg.add("ScikitLearn")
 # Pkg.add("Conda")
